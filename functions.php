@@ -46,4 +46,14 @@ function bp_register_menus() {
 
 add_action( 'init', 'bp_register_menus', 10 );
 
+function bp_get_page_title() {
+
+	if ( is_home() ) {
+		return get_bloginfo();
+	} else {
+		return the_title() . ' | ' . get_bloginfo();
+	}
+
+}
+
 include 'inc/inc-woocommerce.php';
