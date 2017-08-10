@@ -1,4 +1,5 @@
 $primary: #3c3d41;
+$secondary: #ffffff;
 $text: #222222;
 $gray: #98999a;
 
@@ -8,10 +9,6 @@ $gray: #98999a;
 	margin: 0;
 	box-sizing: border-box;
 	color: $text;
-}
-
-html {
-	height: 100%;
 }
 
 html,
@@ -32,6 +29,195 @@ body {
 	}
 
 }
+
+header {
+	background-color: #eee;
+	border-bottom: 1px solid #CCC;
+}
+
+header,
+section,
+footer, {
+
+	&.is-medium {
+		min-height: 375px;
+	}
+
+	&.is-large {
+		min-height: 600px;
+	}
+
+	.section-header,
+	.section-body {
+		display: block;
+
+		.wrapper {
+			display: block;
+			padding: 40px;
+			max-width: 1000px;
+			margin: 0 auto;
+
+			&.nav-bar-wrapper {
+				padding: 5px 40px;
+			}
+
+			&.content-wrapper {
+				padding-right: 30%;
+				margin-top: 10%;
+			}
+
+			&:after {
+				visibility: hidden;
+				display: block;
+				font-size: 0;
+				content: " ";
+				clear: both;
+				height: 0;
+			}
+
+		}
+
+	}
+
+}
+
+nav {
+	display: inline-block;
+	list-style: none;
+	position: relative;
+	font-size: 12px;
+
+	ul {
+		&.is-horizontal {
+			margin: 3% 0;
+
+			li {
+				display: inline-block;
+				font-weight: bold;
+
+				a {
+					padding: 10px;
+				}
+
+			}
+		}
+	}
+
+	li {
+		text-transform: uppercase;
+
+		a {
+			font-weight: bold;
+			letter-spacing: 1px;
+			display: inline-block;
+			padding: 4px 0;
+		}
+
+	}
+
+	> li {
+		position: relative;
+
+		> ul.sub-menu {
+			position: absolute;
+		    display: block;
+		    width: 250px;
+		    top: 45px;
+		    left: 0;
+		    opacity: 0;
+		    visibility: hidden;
+		    overflow: hidden;
+		    background: #ffffff;
+		    border-radius: 0 0 3px 3px;
+		    -webkit-transition: all .3s ease .15s;
+		    -moz-transition: all .3s ease .15s;
+		    -o-transition: all .3s ease .15s;
+		    -ms-transition: all .3s ease .15s;
+		    transition: all .3s ease .15s;
+			z-index: 999;
+
+			li {
+				display: block;
+
+				a {
+					width: 100%;
+					text-align: left;
+				}
+			}
+
+			a {
+				color: $text;
+			}
+
+		}
+
+		&:hover,
+		&:active {
+
+			ul.sub-menu {
+				opacity: 1;
+			    visibility: visible;
+			    overflow: visible;
+			}
+
+		}
+
+		a {
+
+			&:hover {
+				background-color: $gray;
+				color: #ffffff;
+			}
+
+		}
+
+	}
+
+	&.is-horizontal {
+
+		ul {
+			margin: 2% 0;
+		}
+
+		li {
+			display: inline-block;
+			font-weight: bold;
+
+			a {
+				padding: 14px 16px;
+			}
+
+		}
+
+	}
+
+}
+
+h1 {
+	&.is-logo {
+		margin-bottom: 0;
+	}
+}
+
+p {
+	font-size: 16px;
+	margin-bottom: 1rem;
+
+	&.is-headline {
+		font-size: 28px;
+	}
+}
+
+.is-three-fourths { width: 75%; }
+.is-half { width: 50%; }
+.is-one-third { width: 30%; }
+.has-space-on-top { margin-top: 10%; }
+.is-light { background-color: $secondary; }
+.is-dark { background-color: $primary; }
+.is-floating-left { float: left; }
+.is-floating-right { float: right; }
+
+
 
 /** Grid **/
 @media only screen and (min-width: 800px) {
@@ -234,97 +420,7 @@ footer {
 
 }
 
-/** Navigation **/
-.nav {
-	list-style: none;
-	position: relative;
-	font-size: 12px;
 
-	li {
-		text-transform: uppercase;
-
-		a {
-			font-weight: bold;
-			letter-spacing: 1px;
-			display: inline-block;
-			padding: 4px 0;
-		}
-
-	}
-
-	> li {
-		position: relative;
-
-		> ul.sub-menu {
-			position: absolute;
-		    display: block;
-		    width: 250px;
-		    top: 45px;
-		    left: 0;
-		    opacity: 0;
-		    visibility: hidden;
-		    overflow: hidden;
-		    background: #ffffff;
-		    border-radius: 0 0 3px 3px;
-		    -webkit-transition: all .3s ease .15s;
-		    -moz-transition: all .3s ease .15s;
-		    -o-transition: all .3s ease .15s;
-		    -ms-transition: all .3s ease .15s;
-		    transition: all .3s ease .15s;
-			z-index: 999;
-
-			li {
-				display: block;
-
-				a {
-					width: 100%;
-					text-align: left;
-				}
-			}
-
-			a {
-				color: $text;
-			}
-
-		}
-
-		&:hover,
-		&:active {
-
-			ul.sub-menu {
-				opacity: 1;
-			    visibility: visible;
-			    overflow: visible;
-			}
-
-		}
-
-		a {
-
-			&:hover {
-				background-color: $gray;
-				color: #ffffff;
-			}
-
-		}
-
-	}
-
-	&.is-horizontal {
-
-		li {
-			display: inline-block;
-			font-weight: bold;
-
-			a {
-				padding: 14px 16px;
-			}
-
-		}
-
-	}
-
-}
 
 @media only screen and (max-width: 768px) {
 
@@ -475,11 +571,6 @@ h4 {
 	margin-bottom: 1.5rem;
 }
 
-p {
-	font-size: 16px;
-	margin-bottom: 1rem;
-}
-
 a {
 	color: $gray;
 	text-decoration: none;
@@ -514,6 +605,7 @@ a {
 	display: none;
 }
 
+button,
 .button,
 input[type="submit"],
 input[type="button"] {
@@ -522,8 +614,7 @@ input[type="button"] {
 	border-radius: 5px;
 	text-align: center;
 	display: inline-block;
-	max-width: 190px;
-	padding: 5px 20px;
+	padding: 10px 30px;
 	text-transform: uppercase;
 	font-size: 12px;
 	font-weight: bold;
