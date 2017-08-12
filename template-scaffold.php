@@ -87,4 +87,14 @@ get_header(); ?>
 	</div>
 </section>
 
+<section class="is-gallery">
+	<div class="section-body">
+		<div class="post"></div>
+		<div class="post"></div>
+		<div class="post"></div>
+		<div class="post"></div>
+		<div class="post"></div>
+	</div>
+</section>
+
 <?php get_footer(); ?>
