@@ -108,7 +108,7 @@ nav {
 		&.is-horizontal {
 			margin: 3% 0;
 			padding-left: 0;
-			
+
 			li {
 				display: inline-block;
 				font-weight: bold;
@@ -214,6 +214,10 @@ nav {
 h1 {
 	&.is-logo {
 		margin-bottom: 0;
+
+		img {
+			max-width: 100%;
+		}
 	}
 }
 
@@ -342,6 +346,12 @@ ul {
 	opacity: .5;
 }
 
+.is-poster {
+	background-size: cover;
+	background-position: center;
+	min-height: 200px;
+}
+
 .is-three-fourths { width: 75%; }
 .is-half { width: 50%; }
 .is-one-third { width: 30%; }
@@ -355,6 +365,48 @@ ul {
 .has-medium-padding { padding: 20px; }
 .has-large-padding { padding: 30px; }
 .has-left-margin { margin-left: 10%; }
+.is-icon {
+	margin-bottom: 20px;
+
+	&.is-large {
+		font-size: 48px;
+	}
+
+	&.is-medium {
+		font-size: 60px;
+	}
+
+	&.is-small {
+		font-size: 24px;
+	}
+}
+
+.posts {
+
+	.thumbnail {
+		margin-bottom: 2%;
+		background-size: cover;
+		background-position: center;
+	}
+
+}
+
+.widget {
+	margin-bottom: 40px;
+
+	> ul {
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			margin: 7px 0;
+		}
+	}
+}
+
+article {
+	margin-bottom: 40px;
+}
 
 /** Grid **/
 @media only screen and (min-width: 800px) {
@@ -386,7 +438,8 @@ ul {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	align-items: stretch;
+	height: 100%;
 
 	.column {
 		display: block;
@@ -518,6 +571,7 @@ section {
 
 			.column {
 				border-right: 1px solid #4e5054;
+				padding: 0;
 
 				&:last-of-type {
 					border: none;
@@ -733,6 +787,9 @@ a {
 .has-text-centered {
 	text-align: center;
 }
+.has-text-justified {
+	text-align: justify;
+}
 
 .has-text-right {
 	text-align: right;
@@ -827,7 +884,7 @@ i {
 	}
 
 	&.is-large {
-		font-size: 48px;
+		font-size: 90px;
 	}
 
 	&.button {

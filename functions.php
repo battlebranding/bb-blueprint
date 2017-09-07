@@ -56,4 +56,36 @@ function bp_get_page_title() {
 
 }
 
+function bp_register_sidebar() {
+
+	/* Register the primary sidebar. */
+    register_sidebar(
+        array(
+            'id' => 'primary',
+            'name' => __( 'Primary', 'bb-blueprint' ),
+            'description' => __( 'Sidebar for the pages.', 'bb-blueprint' ),
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>'
+        )
+    );
+
+	/* Register the primary sidebar. */
+    register_sidebar(
+        array(
+            'id' => 'blog',
+            'name' => __( 'Blog', 'bb-blueprint' ),
+            'description' => __( 'Sidebar for the blog.', 'bb-blueprint' ),
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>'
+        )
+    );
+
+}
+
+add_action( 'widgets_init', 'bp_register_sidebar' );
+
 include 'inc/inc-woocommerce.php';
