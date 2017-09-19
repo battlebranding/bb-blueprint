@@ -1,3 +1,5 @@
 <?php get_header(); ?>
-Archive
+
+This is for food
+
 <?php get_footer(); ?>

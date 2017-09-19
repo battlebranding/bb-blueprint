@@ -1,4 +1,9 @@
-<?php get_header( get_theme_mod( 'site_type' ) ); ?>
+<?php
+	/**
+	 * Template Name: Page - Fullwidth
+	 */
+	get_header( get_theme_mod( 'site_type' ) );
+?>
 
 <section class="<?php echo get_theme_mod( 'site_type' ); ?>">
 	<div class="section-header" style="height: 180px;">
@@ -9,16 +14,9 @@
 	</div>
 	<div class="section-body has-text-centered">
 		<div class="wrapper">
-			<div class="columns is-fullwidth-on-mobile">
-				<div class="column is-fullwidth-on-mobile">
-					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-						<?php the_content(); ?>
-					<?php endwhile; endif; ?>
-				</div>
-				<div class="colum is-fullwidth-on-mobile">
-					<?php  ?>
-				</div>
-			</div>
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<?php the_content(); ?>
+			<?php endwhile; endif; ?>
 		</div>
 	</div>
 </section>
