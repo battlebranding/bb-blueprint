@@ -364,6 +364,14 @@ hr {
 	top: 0;
 	left: 0;
 	opacity: .4;
+
+	.caption {
+		position: absolute;
+		color: #fff;
+		left: 10px;
+		bottom: 10px;
+		font-size: 11px;
+	}
 }
 
 .is-poster {
